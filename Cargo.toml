@@ -1,0 +1,11 @@
+[package]
+name = "API_Server_Rust_MongoDB"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.8.0"
+chrono = "0.4.38"
+futures-util = "0.3.30"
+mongodb = "3.0.1"
+serde = "1.0.204"
