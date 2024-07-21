@@ -1,11 +1,10 @@
-use std::result;
+
 use std::str::FromStr;
-use std::thread::current;
 use std::time::SystemTime;
 
 use chrono::Utc;
-use futures_util::{StreamExt, TryStreamExt};
-use mongodb::bson::{self,bson, document, from_document};
+use futures_util::StreamExt;
+use mongodb::bson::from_document;
 use mongodb::bson::{doc,oid::ObjectId,DateTime};
 use mongodb::results::{InsertOneResult, UpdateResult};
 use mongodb::{Client,Collection,error::Error as MongoError};
@@ -16,6 +15,7 @@ use crate::models::dog_model::Dog;
 
 
 
+#[derive(Clone)]
 pub struct Database {
     booking:Collection<Booking>,
     owner:Collection<Owner>,
